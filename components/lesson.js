@@ -8,35 +8,37 @@ class Lesson extends Component {
   render () {
     const {navigate} = this.props.navigation;
     return (
+      <View style={{flex: 1}}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={{flex: 1}}>
           <Text style={styles.pageHeader}>Plan a Lesson</Text>
         </View>
         <TouchableOpacity style={{flex: 1}} onPress={() => navigate('Standard')}>
-        <View style={{flex: 1}}>
-          <Text style={styles.sectionHeader}>Standards</Text>
-          <Text style={styles.teacherInput}>{this.props.standard}</Text>
-        </View>
+          <View style={styles.cardContainer}>
+            <Text style={styles.sectionHeader}>Standards</Text>
+            <Text style={styles.teacherInput}>{this.props.standard}</Text>
+          </View>
         </TouchableOpacity>
         <TouchableOpacity style={{flex: 1}} onPress={() => navigate('Scaffold')}>
-          <View style={{flex: 1}}>
+          <View style={styles.cardContainer}>
             <Text style={styles.sectionHeader}>Scaffolds</Text>
             <Text style={styles.teacherInput}>{this.props.scaffold}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={{flex: 1}} onPress={() => navigate('Objective')}>
-          <View style={{flex: 1}}>
+          <View style={styles.cardContainer}>
             <Text style={styles.sectionHeader}>Objective</Text>
             <Text style={styles.teacherInput}>{this.props.objective}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={{flex: 1}} onPress={() => navigate('Plan')}>
-          <View style={{flex: 1}}>
+          <View style={styles.cardContainer}>
             <Text style={styles.sectionHeader}>Lesson</Text>
             <Text style={styles.teacherInput}>{this.props.plan}</Text>
           </View>
         </TouchableOpacity>
       </ScrollView>
+      </View>
     );
   }
 }
