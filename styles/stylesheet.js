@@ -2,43 +2,50 @@ import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    // flex: 1,
+    // justifyContent: 'center',
     backgroundColor: '#e3dbdb',
-    textAlign: 'center',
+    // textAlign: 'center',
     fontWeight: 'bold',
     color: '#4e3d42',
-    fontSize: 18,
+    fontSize: 18
+  },
+  cardContainer: {
+    flex: 1,
+    paddingTop: 15,
+    paddingBottom: 15
   },
   pageHeader: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     backgroundColor: '#e3dbdb',
     marginTop: 40,
     textAlign: 'center',
     fontWeight: 'bold',
     color: '#400406',
     fontSize: 24,
+    paddingBottom: 20
   },
   sectionHeader: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     backgroundColor: '#e3dbdb',
     paddingLeft: 5,
     marginLeft: 2,
-    marginTop: -40,
+    // marginTop: -40,
     fontWeight: 'bold',
     color: '#4e3d42',
     fontSize: 20,
+    marginBottom: 5
   },
   teacherInput: {
-    flex: 1,
-    justifyContent: 'center',
+    flex: 4,
+    // justifyContent: 'center',
     backgroundColor: '#e3dbdb',
-    paddingLeft: 5,
+    paddingLeft: 10,
     marginLeft: 2,
-    marginTop: -120,
-    paddingBottom: -40,
+    // marginTop: -120,
+    // paddingBottom: -40,
     color: '#6d6466',
     fontSize: 18,
   },
