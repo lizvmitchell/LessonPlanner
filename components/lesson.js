@@ -1,35 +1,51 @@
 import React, { Component } from 'react';
-import { Text, View, Picker, TouchableOpacity, Alert} from 'react-native';
+import { Text, View, TouchableOpacity, ScrollView} from 'react-native';
 import styles from '../styles/stylesheet'
+import { connect } from 'react-redux'
 
 
-
-export default class Lesson extends Component {
+class Lesson extends Component {
   render () {
+    const {navigate} = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         <View style={{flex: 1}}>
           <Text style={styles.pageHeader}>Plan a Lesson</Text>
         </View>
-        <TouchableOpacity style={{flex: 1}} onPress={() => Alert.alert('Alert!')}>
+        <TouchableOpacity style={{flex: 1}} onPress={() => navigate('Standard')}>
         <View style={{flex: 1}}>
           <Text style={styles.sectionHeader}>Standards</Text>
-          <Text style={styles.teacherInput}>Choose a Standard</Text>
+          <Text style={styles.teacherInput}>{this.props.standard}</Text>
         </View>
         </TouchableOpacity>
-        <View style={{flex: 1}}>
-          <Text style={styles.sectionHeader}>Scaffolds</Text>
-          <Text style={styles.teacherInput}>Enter a Scaffold</Text>
-        </View>
-        <View style={{flex: 1}}>
-          <Text style={styles.sectionHeader}>Objective</Text>
-          <Text style={styles.teacherInput}>Enter an Objective</Text>
-        </View>
-        <View style={{flex: 1}}>
-          <Text style={styles.sectionHeader}>Lesson</Text>
-          <Text style={styles.teacherInput}>Enter Do-Now, Mini-Lesson, Activity</Text>
-        </View>
-      </View>
+        <TouchableOpacity style={{flex: 1}} onPress={() => navigate('Scaffold')}>
+          <View style={{flex: 1}}>
+            <Text style={styles.sectionHeader}>Scaffolds</Text>
+            <Text style={styles.teacherInput}>{this.props.scaffold}</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={{flex: 1}} onPress={() => navigate('Objective')}>
+          <View style={{flex: 1}}>
+            <Text style={styles.sectionHeader}>Objective</Text>
+            <Text style={styles.teacherInput}>{this.props.objective}</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={{flex: 1}} onPress={() => navigate('Plan')}>
+          <View style={{flex: 1}}>
+            <Text style={styles.sectionHeader}>Lesson</Text>
+            <Text style={styles.teacherInput}>{this.props.plan}</Text>
+          </View>
+        </TouchableOpacity>
+      </ScrollView>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  standard: state.standard,
+  objective: state.objective,
+  scaffold: state.scaffold,
+  plan: state.plan
+})
+
+export default connect(mapStateToProps)(Lesson)

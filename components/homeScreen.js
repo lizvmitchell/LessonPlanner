@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, Picker, TouchableOpacity, Alert} from 'react-native';
+import { Text, View, TouchableOpacity} from 'react-native';
 import styles from '../styles/stylesheet'
+import { connect } from 'react-redux'
 
-export default class HomeScreen extends Component {
+
+class HomeScreen extends Component {
   render () {
     const {navigate} = this.props.navigation;
     return (
@@ -16,4 +18,10 @@ export default class HomeScreen extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  standards: state.standards
+})
+
+export default connect(mapStateToProps)(HomeScreen)
 
