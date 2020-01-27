@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, TouchableWithoutFeedback, TouchableOpacity, Keyboard} from 'react-native';
+import { Text, View, TextInput, TouchableWithoutFeedback, TouchableOpacity, Keyboard, ScrollView} from 'react-native';
 import styles from '../styles/stylesheet'
 import { connect } from 'react-redux'
 import { updateStandard } from '../reducer/reducer'
@@ -25,8 +25,10 @@ class Standard extends Component {
         <View style={styles.formContainer}>
             <View style={{flex: 1, justifyContent: 'center'}}>
               <Text style={styles.formHeader}>Enter a Standard</Text>
-              <TextInput multiline numberOfLines={12} style={styles.formInput} placeholder={'Enter a Standard'} value={this.state.standard} onChangeText={(standard) => this.setState({standard})}/>
-              <TouchableOpacity onPress={() => this.updateStandard()} style={styles.doneButton} title={'Done'}>
+              <ScrollView contentContainerStyle={styles.container}>
+                <TextInput multiline numberOfLines={12} style={styles.formInput} placeholder={'Enter a Standard'} value={this.state.standard} onChangeText={(standard) => this.setState({standard})}/>
+              </ScrollView>
+              <TouchableOpacity onPress={() => this.updateStandard()} style={{flex: 1}} title={'Done'}>
                 <Text style={styles.doneButton}>Done</Text>
               </TouchableOpacity>
             </View>
