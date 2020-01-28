@@ -12,6 +12,12 @@ class HomeScreen extends Component {
         <TouchableOpacity style={{flex: 1}} onPress={() => navigate('Lesson')}>
           <View style={{flex: 1}}>
             <Text style={styles.pageHeader}>Plan a Lesson!</Text>
+            <TouchableOpacity style={{flex: 1}} onPress={() => navigate('GradeSelector')}>
+              <Text style={styles.pageHeader}>{this.props.grade ? this.props.grade : `Select a grade`}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={{flex: 1}} onPress={() => navigate('SubjectSelector')}>
+              <Text style={styles.pageHeader}>{this.props.subject? this.props.subject : `Select a subject`}</Text>
+            </TouchableOpacity>
           </View>
         </TouchableOpacity>
       </View>
@@ -20,7 +26,10 @@ class HomeScreen extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  standards: state.standards
+  standards: state.standards,
+  grade: state.grade,
+  subject: state.subject
+
 })
 
 export default connect(mapStateToProps)(HomeScreen)

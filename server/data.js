@@ -7,8 +7,8 @@ const ELA1 = [{standard: 'RL.1.1' , description: 'Ask and answer questions about
 
 const MAT1 = [{standard: '1.OA.A.1' , description: 'Use addition and subtraction within 20 to solve word problems involving situations of adding to, taking from, putting together, taking apart, and comparing, with unknowns in all positions, e.g., by using objects, drawings, and equations with a symbol for the unknown number to represent the problem.'}, {standard: '1.OA.A.2' , description: 'Solve word problems that call for addition of three whole numbers whose sum is less than or equal to 20, e.g., by using objects, drawings, and equations with a symbol for the unknown number to represent the problem.'}, {standard: '1.OA.B.3' , description: 'Apply properties of operations as strategies to add and subtract.'}, {standard: '1.OA.B.4' , description: 'Understand subtraction as an unknown-addend problem. For example, subtract 10 - 8 by finding the number that makes 10 when added to 8.'}, {standard: '1.OA.C.5' , description: 'Relate counting to addition and subtraction (e.g., by counting on 2 to add 2).'}]
 
-const K = {ELA: ELAK, MATH: MATK}
+const K = {ELA: ELAK, Math: MATK}
 
-const FIRST = {ELA: ELA1, MATH: MAT1}
+const FIRST = {ELA: ELA1, Math: MAT1}
 
-export const data = {kindergarten: K, first: FIRST}
+export const data = {'Kindergarten': K, '1st': FIRST}

@@ -3,6 +3,7 @@ import { Text, View, TextInput, TouchableWithoutFeedback, TouchableOpacity, Keyb
 import styles from '../styles/stylesheet'
 import { connect } from 'react-redux'
 import { updateStandard } from '../reducer/reducer'
+import { data } from '../server/data'
 
 class Standard extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Standard extends Component {
       standard: ''
     }
     this.updateStandard = this.updateStandard.bind(this);
+    this.getStandards = this.getStandards.bind(this);
   }
 
   updateStandard() {
@@ -19,7 +21,13 @@ class Standard extends Component {
     this.props.navigation.navigate('Lesson')
   }
 
+  getStandards() {
+    let standards = data[this.props.grade][this.props.subject];
+    return standards;
+  }
+
   render () {
+    let standards = this.getStandards();
     return (
       <TouchableWithoutFeedback style={{flex: 1}} onPress={() => Keyboard.dismiss()}>
         <View style={styles.formContainer}>
@@ -27,9 +35,13 @@ class Standard extends Component {
               <Text style={styles.formHeader}>Enter a Standard</Text>
               <View style={styles.container}>
                 <Picker selectedValue={this.state.standard} onValueChange={(standard) => this.setState({standard})}>
-                  <Picker.Item label = "R.6.1" value = "R.6.1" />
+                  {/* <Picker.Item label = "R.6.1" value = "R.6.1" />
                   <Picker.Item label = "R.6.2" value = "R.6.2" />
-                  <Picker.Item label = "R.6.3" value = "R.6.3" />
+                  <Picker.Item label = "R.6.3" value = "R.6.3" /> */}
+                  {
+                    standards.map(standard => {
+                      return <Picker.Item key={standard.standard} label={standard.standard} value={standard.description}/>})
+                  }
                 </Picker>
                 <Text style={styles.formInput}>{this.state.standard}</Text>
               </View>
@@ -44,7 +56,9 @@ class Standard extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  standard: state.standard
+  standard: state.standard,
+  grade: state.grade,
+  subject: state.subject
 })
 
 const mapDispatchToProps = (dispatch) => ({
