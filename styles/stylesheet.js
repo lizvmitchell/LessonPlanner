@@ -15,6 +15,15 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15
   },
+  homeContainer: {
+    flex: 1,
+    // justifyContent: 'center',
+    backgroundColor: '#e3dbdb',
+    // textAlign: 'center',
+    fontWeight: 'bold',
+    color: '#4e3d42',
+    fontSize: 18
+  },
   pageHeader: {
     flex: 1,
     // justifyContent: 'center',
@@ -51,21 +60,21 @@ const styles = StyleSheet.create({
   },
   formInput: {
     flex: 2,
-    justifyContent: 'flex-start',
+    // justifyContent: 'flex-start',
     backgroundColor: '#e3dbdb',
     paddingLeft: 5,
     marginLeft: 2,
-    marginTop: 0,
+    // marginTop: 0,
     // marginTop: -120,
     // paddingBottom: -40,
-    paddingBottom: 300,
+    // paddingBottom: 300,
     color: '#6d6466',
     fontSize: 18,
-    zIndex: 10
+    // zIndex: 10
   },
   formHeader: {
     flex: 1,
-    justifyContent: 'flex-start',
+    // justifyContent: 'flex-start',
     backgroundColor: '#e3dbdb',
     marginTop: 40,
     textAlign: 'center',
@@ -74,20 +83,24 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   doneButton: {
-    flex: 1,
-    backgroundColor: '#e3dbdb',
-    marginTop: 0,
-    textAlign: 'center',
+    // flex: 1,
+    backgroundColor: '#d2caca',
+    // marginTop: 0,
+    // textAlign: 'center',
     alignSelf: 'center',
-    color: '#400406',
+    color: '#733739',
     fontSize: 24,
-    paddingBottom: 40
+    padding: 5,
+    borderColor: '#d2caca',
+    borderWidth: 1.5,
+    borderRadius: 17,
+    overflow: 'hidden'
   },
   formContainer: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     backgroundColor: '#e3dbdb',
-    textAlign: 'center',
+    // textAlign: 'center',
     fontWeight: 'bold',
     color: '#4e3d42',
     fontSize: 18,

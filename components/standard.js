@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, TouchableWithoutFeedback, TouchableOpacity, Keyboard} from 'react-native';
+import { Text, View, TextInput, TouchableWithoutFeedback, TouchableOpacity, Keyboard, ScrollView, Picker} from 'react-native';
 import styles from '../styles/stylesheet'
 import { connect } from 'react-redux'
 import { updateStandard } from '../reducer/reducer'
@@ -9,7 +9,7 @@ class Standard extends Component {
     super(props)
 
     this.state = {
-      standard: this.props.standard
+      standard: ''
     }
     this.updateStandard = this.updateStandard.bind(this);
   }
@@ -25,8 +25,15 @@ class Standard extends Component {
         <View style={styles.formContainer}>
             <View style={{flex: 1, justifyContent: 'center'}}>
               <Text style={styles.formHeader}>Enter a Standard</Text>
-              <TextInput multiline numberOfLines={12} style={styles.formInput} placeholder={'Enter a Standard'} value={this.state.standard} onChangeText={(standard) => this.setState({standard})}/>
-              <TouchableOpacity onPress={() => this.updateStandard()} style={styles.doneButton} title={'Done'}>
+              <View style={styles.container}>
+                <Picker selectedValue={this.state.standard} onValueChange={(standard) => this.setState({standard})}>
+                  <Picker.Item label = "R.6.1" value = "R.6.1" />
+                  <Picker.Item label = "R.6.2" value = "R.6.2" />
+                  <Picker.Item label = "R.6.3" value = "R.6.3" />
+                </Picker>
+                <Text style={styles.formInput}>{this.state.standard}</Text>
+              </View>
+              <TouchableOpacity onPress={() => this.updateStandard()} style={{flex: 1}} title={'Done'}>
                 <Text style={styles.doneButton}>Done</Text>
               </TouchableOpacity>
             </View>

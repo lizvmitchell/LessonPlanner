@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, TouchableWithoutFeedback, TouchableOpacity, Keyboard} from 'react-native';
+import { Text, View, TextInput, TouchableWithoutFeedback, TouchableOpacity, Keyboard, ScrollView} from 'react-native';
 import styles from '../styles/stylesheet'
 import { connect } from 'react-redux'
 import { updateScaffold } from '../reducer/reducer'
@@ -25,8 +25,10 @@ class Scaffold extends Component {
         <View style={styles.formContainer}>
             <View style={{flex: 1, justifyContent: 'center'}}>
               <Text style={styles.formHeader}>Enter a Scaffold</Text>
-              <TextInput multiline numberOfLines={12} style={styles.formInput} placeholder={'ELLs will be supported by...'} value={this.state.scaffold} onChangeText={(scaffold) => this.setState({scaffold})}/>
-              <TouchableOpacity onPress={() => this.updateScaffold()} style={styles.doneButton} title={'Done'}>
+              <ScrollView contentContainerStyle={styles.container}>
+                <TextInput multiline numberOfLines={12} style={styles.formInput} placeholder={'ELLs will be supported by...'} value={this.state.scaffold} onChangeText={(scaffold) => this.setState({scaffold})}/>
+              </ScrollView>
+              <TouchableOpacity onPress={() => this.updateScaffold()} style={{flex: 1}} title={'Done'}>
                 <Text style={styles.doneButton}>Done</Text>
               </TouchableOpacity>
             </View>

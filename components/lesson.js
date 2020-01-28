@@ -8,7 +8,7 @@ class Lesson extends Component {
   render () {
     const {navigate} = this.props.navigation;
     return (
-      <View style={{flex: 1}}>
+      <View style={styles.homeContainer}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={{flex: 1}}>
           <Text style={styles.pageHeader}>Plan a Lesson</Text>
