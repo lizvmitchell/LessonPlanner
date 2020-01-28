@@ -3,7 +3,9 @@ const initialState = {
   standard: 'Choose a standard',
   objective: 'Write an objective',
   scaffold: 'Choose some scaffolds',
-  plan: 'Enter Do-Now, Mini-Lesson, Activity'
+  plan: 'Enter Do-Now, Mini-Lesson, Activity',
+  grade: '',
+  subject: ''
 }
 
 const UPDATE_OBJECTIVE = 'UPDATE_OBJECTIVE';

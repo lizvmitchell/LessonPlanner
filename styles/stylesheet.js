@@ -88,10 +88,10 @@ const styles = StyleSheet.create({
     // marginTop: 0,
     // textAlign: 'center',
     alignSelf: 'center',
-    color: '#400406',
+    color: '#733739',
     fontSize: 24,
     padding: 5,
-    borderColor: '#4e3d42',
+    borderColor: '#d2caca',
     borderWidth: 1.5,
     borderRadius: 17,
     overflow: 'hidden'
