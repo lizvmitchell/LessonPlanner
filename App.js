@@ -8,6 +8,8 @@ import Objective from './components/objective'
 import Scaffold from './components/scaffold'
 import Plan from './components/plan'
 import Standard from './components/standard'
+import GradeSelector from './components/gradeSelector'
+import SubjectSelector from './components/subjectSelector'
 
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
@@ -23,7 +25,9 @@ const MainNavigator = createStackNavigator(
     Objective: {screen: Objective},
     Scaffold: {screen: Scaffold},
     Plan: {screen: Plan},
-    Standard: {screen: Standard}
+    Standard: {screen: Standard},
+    GradeSelector: {screen: GradeSelector},
+    SubjectSelector: {screen: SubjectSelector}
   },
   {
     initialRouteName: 'Home',

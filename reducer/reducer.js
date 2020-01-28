@@ -20,6 +20,12 @@ export const updatePlan = (plan) => ({type: UPDATE_PLAN, plan})
 const UPDATE_STANDARD = 'UPDATE_STANDARD';
 export const updateStandard = (standard) => ({type: UPDATE_STANDARD, standard})
 
+const UPDATE_GRADE = 'UPDATE_GRADE';
+export const updateGrade = (grade) => ({type: UPDATE_GRADE, grade})
+
+const UPDATE_SUBJECT = 'UPDATE_SUBJECT';
+export const updateSubject = (subject) => ({type: UPDATE_SUBJECT, subject})
+
 
 export const reducer = (state = initialState, action) => {
 
@@ -31,7 +37,11 @@ export const reducer = (state = initialState, action) => {
     case UPDATE_PLAN:
       return {...state, plan: action.plan};
     case UPDATE_STANDARD:
-      return {...state, standard: action.standard}
+      return {...state, standard: action.standard};
+    case UPDATE_GRADE:
+      return {...state, grade: action.grade};
+    case UPDATE_SUBJECT:
+      return {...state, subject: action.subject};
     default:
       return state
   }
